@@ -622,6 +622,7 @@ footer {
 #user-status {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 #user-info {
@@ -665,10 +666,123 @@ footer {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+#announcement-banner-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .announcement-banner {
   background-color: #4caf50;
   color: white;
   text-align: center;
   padding: 15px;
   font-weight: bold;
+}
+
+.announcement-banner + .announcement-banner {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Manage announcements modal */
+.announcements-modal-content {
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+#announcement-form textarea {
+  width: 100%;
+  min-height: 70px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.announcement-date-row {
+  display: flex;
+  gap: 15px;
+}
+
+.announcement-date-row .form-group {
+  flex: 1;
+}
+
+.announcement-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.announcement-form-actions .cancel-btn {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+#announcements-list {
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.announcement-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--surface);
+}
+
+.announcement-item.expired {
+  opacity: 0.6;
+}
+
+.announcement-item-message {
+  margin: 0 0 6px 0;
+  font-weight: 500;
+}
+
+.announcement-item-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.expired-badge {
+  color: #c62828;
+  font-weight: 600;
+}
+
+.announcement-item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.announcement-item-actions button {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.edit-announcement-btn {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.delete-announcement-btn {
+  background-color: #fdecea;
+  color: #c62828;
 }
